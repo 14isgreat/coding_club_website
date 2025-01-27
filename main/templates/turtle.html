@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Turtle</h1>
+            <p>Pattern Making Python Library</p>
+            <p>Difficulty level: 2/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is Turtle?</h2>
+    
+    <div class="explainer">
+        <p> Turtle is a beginner-friendly Python library used to create drawings and animations. </p>
+        <p>It provides a virtual "turtle" that moves on the screen, drawing lines as it goes. </p>
+        <p>You control its movements (like forward, backward, turn), making it ideal for learning programming concepts while creating fun, visual art or designs.</p>
+    </div> 
+
+    <h2 class="subheader">Setting Up</h2>
+    
+    <div class="explainer">
+        <p>1. Make a new file in the folder <code>coding-club</code>. </p>
+        <p>Optional: Make a folder called <code>turtle_codes</code> in the <code>coding-club</code> folder and add your file there.</p>
+        <p>2. The first line of your file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>import turtle as t </code>
+        </div>
+        <p>3. The last line of your file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.done() </code>
+        </div>
+    </div>    
+    
+    <h2 class="subheader">Tutorial: First Movements</h2>
+    
+    <div class="explainer">
+        <p>1. Basic forward and backward movement</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.forward(100) # 100 pixels
+t.backward(200) # 200 pixels</code>
+        </div>
+        <p>This does exactly the same, but it's faster to write.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.fd(100)
+t.bk(200)</code>
+        </div>
+        <p>2. Turn left or right</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.right(90) # 90 degrees
+t.left(45) # 45 degrees</code>
+        </div>
+        <p>Again, you can shorten your code</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.rt(90)
+t.lt(45)</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Get rid of Turtle *shocking*</h2>
+    
+    <div class="explainer">
+        <p>You don't like turtle? Make him go away</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.hideturtle() </code>
+        </div>
+        <p>Regret your decision? I thought so. Bring him back.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.showturtle()</code>
+        </div>
+        <p>You can also change the shape. Bring back the real turtle.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.shape("turtle")</code>
+        </div>
+        <p>There are a few different shapes to choose from. They are “arrow”, “turtle”, “circle”, “square”, “triangle”, “classic”. But none of them are as cool as turtle.</p>
+        <p>You can also make custom shapes. But making those is complicated. If you want, <a href="https://docs.python.org/3/library/turtle.html#turtle.register_shape" target="_blank">here</a> is how to do it. Not recommended.</p>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: First Shapes</h2>
+        
+    <div class="explainer">
+        <p>1. Drawing a square</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.fd(100)
+t.rt(90)
+t.fd(100)
+t.rt(90)
+t.fd(100)
+t.rt(90)
+t.fd(100)
+t.rt(90)</code>
+        </div>
+        <p>You can shorten the code by adding a repetition, since earlier you are simply repeating two lines four times.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>for i in range(4): # this makes the code underneath (which needs to be indented) repeat four times
+    t.fd(100)
+    t.rt(90)</code>
+        </div>
+        <p>2. Drawing a triangle</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.fd(100)
+t.lt(120) 
+t.fd(100)
+t.lt(120)
+t.fd(100)
+t.lt(120)</code>
+        </div>
+        <p>A triangle has three angles with a total of 180 degrees -> for each side length to be the same you need an angle of 60 -> therefore the pen has to move (180-60=120) degrees</p>
+        <p>You can also shorten this code.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>for i in range(3):
+    t.fd(100)
+    t.lt(120)</code>
+        </div>
+        <p>PROJECT: A program which draws three squares next to each other.</p>
+        <p>ADVANCED: Use a function to create each square and let the user choose how many squares should be drawn next to each other.</p>
+        <p>EXPERT: Instead of a square every time, a random shape is drawn, ranging from a triangle (3 corners) to a shape with 100 corners. </p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Colors</h2>
+      
+    <div class="explainer">
+        <p>1. Changing the pen color</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.pencolor("yellow")</code>
+        </div>
+        <p>You can also pass RGB values.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.pencolor(83, 58, 27)</code>
+        </div>
+        <p>2. Fill in a shape with a color</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.pencolor("red")
+t.begin_fill()
+for i in range(4): # this makes the code underneath (which needs to be indented) repeat four times
+    t.fd(100)
+    t.rt(90)
+t.end_fill()</code>
+        </div>
+        <p>PROJECT: Each square from your previous project is a different color.</p>
+        <p>ADVANCED: Pass the color of each square through the function. Make the color of each square be randomly chosen.</p>
+        <p>EXPERT: Each shape has as many colors as there are corners. No color features more than once.</p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Picking the pen up</h2>
+      
+    <div class="explainer">
+        <p>1. To move the turtle without leaving a trail, there is a simple command</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.penup()</code>
+        </div>
+        <p>2. To place it back down you use this command</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.pendown()</code>
+        </div>
+        <p>PROJECT: Leave a space between each square, so that it really looks like there are three squares next to each other.</p>
+        <p>ADVANCED: The turtle starts drawing at the top of the screen and draws squares in rows of 5, before moving down to the next row. </p>
+        <p>EXPERT: Shapes are drawn all over the screen at random until there is no space left for another shape. The shapes are never touching each other. </p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Speed</h2>
+      
+    <div class="explainer">
+        <p>When drawing a larger pattern you might want to increase the turtle's speed.</p>
+        <p>1. The slowest speed is a speed of 1</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.speed(1)</code>
+        </div>
+        <p>2. Increasing the number increases the speed.</p>
+        <p>3. There is one exception: A speed of 0 is the fastest of all</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>t.speed(0)</code>
+        </div>
+        <p>PROJECT: Each square is drawn at a different speed. </p>
+        <p>ADVANCED: The speed of drawing the squares in each row gradually gets faster from left to right.</p>
+        <p>EXPERT: Lighter colors are drawn faster than darker ones, but the time it takes for a shape to be drawn is always the same, no matter the type of shape.</p>
+    </div>
+</body>
+</html>
+{% endblock %}

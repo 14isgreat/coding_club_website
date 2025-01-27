@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Django</h1>
+        <p>Make a website using your Python, HTML, and CSS knowledge</p>
+        <p>Difficulty level: 7/10</p>
+    </header>
+
+    <h2 class="subheader">What is Django?</h2>
+
+    <div class="explainer" id="intro">
+        <p>This website was created with Django!</p>
+        <p>Django is like a toolkit that helps you build websites quickly and efficiently. Imagine you want to create a website, like an online store or a blog. Instead of starting from scratch and figuring out how to make everything work (like user accounts, managing data, or handling payments), Django gives you pre-built tools to make it easier.</p>
+        <p>Think of it as a set of LEGO pieces for websites. Each piece has a specific job, like organizing information, showing it to visitors, or letting people log in securely. You just put the pieces together to create the website you want.</p>    
+        <p>It’s built with Python, a user-friendly programming language, and is known for being reliable and easy to use. Django also focuses on making websites secure, fast, and scalable—so they can handle lots of visitors.</p>
+        <p>One of Django’s big strengths is its ability to manage data. For example, if you’re creating a blog, Django makes it easy to store, update, and display your articles.</p>
+        <p>In short, Django is a powerful, beginner-friendly framework that handles the complex stuff behind the scenes, so you can focus on making your website look and work the way you want. It’s perfect for turning ideas into reality!</p>
+        <p>See the <a target="_blank" href="https://docs.djangoproject.com/en/5.1/">Official Documentation</a> or continue reading to learn this framework!</p>
+    </div>
+
+    <h2 class="subheader">Starting with a template</h2>
+
+    <div class="explainer">
+        <p> 1. Open Visual Studio Code</p>
+        <p> 2. Open the <code style="font-size: 18px;">coding-club</code> folder </p>
+        <p> 3. Run this command in the terminal ( Terminal > New Terminal if no terminal is open ):</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git clone https://github.com/14isgreat/django_template.git </code>
+        </div>
+        <p> 4. Rename the project (No spaces can be in the name, you can use _ instead) by runnning: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> mv django_template {replace with your website name} </code>
+        </div>
+        <p> 5. The website has been created. Navigate to the project file by running: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> cd {replace with whatever you renamed your project to} </code>
+        </div>
+        <p> 6. If Django is not installed yet, run this command: (You can run it just in case)</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> pip install django </code>
+        </div>
+        <p> 7. You are all set up! To open the website run: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> python manage.py runserver </code>
+        </div>
+        <p> ... and then open the link which will pop up in the terminal in a few seconds (Looks something like: http://127.0.0.1:8000/ )</p>
+        <p> 8. You can now click <a href="#tutorial">here</a> to skip down to the tutorial </p>
+    </div>
+
+
+    <h2 class="subheader">Starting from scratch</h2>
+
+    <div class="explainer">
+        <p> 1. Open Visual Studio Code</p>
+        <p> 2. Open the <code style="font-size: 18px;">coding-club</code> folder </p>
+        <p> 3. Run the following commands in the terminal ( Terminal > New Terminal if no terminal is open ):</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> pip install django </code>
+        </div>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> django-admin startproject {replace with your projectname}</code>
+        </div>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> cd {replace with your projectname}</code>
+        </div>
+        <p> 4. Start the development server to make sure everything is working:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> python manage.py runserver</code>
+        </div>
+        <p>Visit <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> in your web browser. You should see the Django "It worked!" page.</p>
+        <p> 5. Now run the following command in the terminal:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> python manage.py startapp main </code>
+        </div>
+        <p> 6. Edit the <code>INSTALLED_APPS</code> list in settings.py by adding <code>'main',</code> to the end. It should look like this:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> INSTALLED_APPS = [
+    # other apps
+    'main',
+ ]   </code>
+        </div>
+        <p> 7. In the <code>main</code> folder create a file called <code>urls.py</code>. In it, write:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>from django.urls import path
+from . import views  # Import views from the current app
+
+urlpatterns = [
+    path('', views.home, name='home'),  # Home page view
+    path('about/', views.about, name='about'),
+]       </code>
+        </div>
+        <p> 8. There is also an existing <code>urls.py</code> file in your other folder. Replace its contents with: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>from django.contrib import admin
+from django.urls import path, include  # include is used to include app URLs
+
+urlpatterns = [
+    path('admin/', admin.site.urls),  # Admin panel URL
+    path('', include('main.urls')),  # Include the app's URLs
+]       </code>
+        </div>
+        <p id="views-example"> 9. In the <code>main</code> folder, edit the <code>views.py</code> file so that it says: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')  # Render the home.html template
+
+def about(request):
+    return render(request, 'about.html')  # Render the about.html template       </code>
+        </div>
+        <p> 10. Now create two folders that are located inside of the <code>main</code> folder. Name them <code>templates</code> and <code>static</code></p>
+        <p id="html-example"> 11. Create two files in your <code>templates</code> folder. Name them <code>home.html</code> and <code>about.html</code>. These are your html files. The structure of the files should look similar to:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            {% verbatim %}
+            <code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Home&lt;/title&gt;
+    {% load static %}
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &#39;home.css&#39; %}&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to the Home Page!&lt;/h1&gt;
+    &lt;p&gt;This is your home page with its own CSS file.&lt;/p&gt;
+    &lt;a href=&quot;/about/&quot;&gt;Go to About Page&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code>
+        {% endverbatim %}
+        </div>
+        <p> 12. Create two files in your <code>css</code> folder. Name them <code>home.css</code> and <code>about.css</code>. These are your css files.</p>
+    </div>
+
+    <h2 class="subheader" id="tutorial">Tutorial: Summary</h2>
+
+    <div class="explainer">
+        <p>Firstly you must understand Django's general structure. You have your html files in the <code>templates</code> folder while your css files are in the <code>static</code> folder. Any images you save and want to display in your website and any javascript files you have are also saved in the <code>static</code> folder.</p>
+        <p>Keep in mind that there are some things that are Django specific that you need to make sure you have. For example, when connecting your html and css files, you must load the <code>static</code> tag. See <a href="#html-example">this</a> for an example.</p>
+        <p>In the <code>urls.py</code> file inside of the <code>main</code> folder is where you define all the links of your website's pages. When you create a new page you must also update the <code>views.py</code> file. See <a href="#views-example">this</a> for an example.</p>
+        <p>If you want to make a simple website using html, css, and javascript, you are good to go!</p>
+    </div>
+    
+    <h2 class="subheader" id="tutorial">Advanced Tutorial: User Interactions</h2>
+
+    <div class="explainer">
+        <p>You can take your website to the next level by enabling interactions with the user. For this, you need to use python.</p>
+        <p>To do this, you must first create a file called <code>forms.py</code> inside of the <code>main</code> folder.</p>
+        <p>To ask users a simple question on your website which they can answer, copy this into <code>forms.py</code>:</p>
+       
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            {% verbatim %}
+            <code>class TextboxForm(forms.Form):
+    color = forms.CharField(
+        label="Textbox",
+        max_length=100000,
+        widget=forms.Textarea(attrs={'class': 'color'})
+    )
+    animal = forms.CharField(
+        label="Textbox",
+        max_length=100000,
+        widget=forms.Textarea(attrs={'class': 'animal'})
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        return cleaned_data </code>
+        {% endverbatim %}
+        </div>
+        <p>...add the following to the beginning of <code>views.py</code>:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            {% verbatim %}
+            <code>from .forms import *</code>
+            {% endverbatim %}
+        </div>
+        <p>...add the following to your <code>home</code> function or whichever page you want to have the interaction on:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            {% verbatim %}
+            <code>def home(request):
+    if request.method == 'POST':
+        form = TextboxForm(request.POST)
+        if form.is_valid():
+            # you can do something with the user's response here, for example save it into a file or database.
+            return redirect('/')  # Redirect to homepage
+        else:
+            print(form.errors)
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = TextboxForm()
+
+    return render(request,'home.html', {'form': form})
+</code>{% endverbatim %}
+        </div>
+        <p>...and add the following into the html file you want to update, while you can update your css to make the website look nicer:</p>
+        <div class="code-container">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    {% verbatim %}
+    <code>&lt;div id=&quot;container&quot;&gt;
+    &lt;h1 id=&quot;header&quot;&gt;A Quick Questionnaire&lt;/h1&gt;
+    &lt;form method=&quot;post&quot; action=&quot;&quot;&gt;
+        {% csrf_token %}
+        &lt;p class=&quot;user-input&quot;&gt;What is your favorite color:&lt;/p&gt;
+        {{ form.color }}
+        &lt;p class=&quot;user-input&quot;&gt;What is your favorite animal:&lt;/p&gt;
+        {{ form.animal }}
+        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; id=&quot;submit-button&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</code>
+{% endverbatim %}
+        </div>
+    </div>
+
+    <h2 class="subheader" id="tutorial">Advanced Tutorial: Databases</h2>
+
+    <div class="explainer">
+        <p>For specific websites you might want to save user interactions into a database for later use. Or you might want to have a database from which users can request certain things. Here is how to do it.</p>
+    </div>
+</body>
+</html>
+{% endblock %}

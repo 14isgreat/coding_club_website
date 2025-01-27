@@ -1,19 +1,45 @@
 body {
-    background-color: #e0f7fa;
-    font-family: Arial, sans-serif;
-    color: #333;
+    text-align: center;
+    background-color: rgb(10, 25, 25);
+}
+
+header {
+    padding: 5px 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+a, a:visited {
+    color: rgb(220, 220, 220);
+}
+
+nav {
+    background-color: rgb(12, 12, 12);
+    padding: 5px 0;
+    font-family: copperplate;
+    font-size: 23px;
+}
+
+nav ul {
+    list-style-type: none;
     text-align: center;
 }
 
-h1 {
-    color: #00796b;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-a {
-    color: #004d40;
+nav ul li a, nav ul li a:visited {
     text-decoration: none;
+    color: rgb(240, 200, 100);
+    font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    color: #fcff61;
+}
+
+.explainer{
+    padding-top: 50px;
 }

@@ -1,0 +1,45 @@
+header{
+    text-align: center; 
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    padding-top: 1px;
+}
+
+h1{
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+a, a:visited {
+    color: rgb(220, 220, 220);
+}
+
+.subtitle{
+    font-size: 18px;
+    margin: 10px;
+    letter-spacing:0.5px;
+    color: rgb(150, 150, 150);
+}
+
+.subheader{
+    background-color: rgb(12, 12, 12);
+    padding: 20px;
+    margin: 0;
+    color: rgb(240, 200, 100);
+}
+
+.explainer{
+    text-align: left;
+    padding: 20px;
+    padding-left: 60px;
+    font-size: 21px;
+    margin-left: 0;
+}
+
+
+#intro{
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #d4d4d4;
+    line-height: 30px;
+}

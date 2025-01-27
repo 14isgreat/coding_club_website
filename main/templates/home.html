@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +10,35 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 <body>
-    <h1>Welcome to the Home Page!</h1>
-    <p>This is your home page with its own CSS file.</p>
-    <a href="/about/">Go to About Page</a>
+    <header>
+        <div class="container">
+            <h1>JFKS Coding Club</h1>
+            <p>The Ultimate Guide</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/python">Python Basics</a></li>
+                <li><a href="/turtle">Turtle</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/django">Pygame</a></li>
+                <li><a href="/django">Django</a></li>
+                <li><a href="/django">Save on GitHub</a></li>
+                <li><a href="/django">Tips & Tricks</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="explainer">
+        <h1>Welcome to the Coding Club!</h1>
+        <p> Meeting times:</p>
+        <p> Monday & Friday, @12:20, W105d (Library) </p>
+        <p>Any questions? Send an email to <a href="mailto:coding-club@jfksberlin.org">coding-club@jfksberlin.org</a></p>
+        <a href="/about/">Go to About Page</a>
+    </div> 
 </body>
 </html>
+{% endblock %}

@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Common head elements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock %}</title>
+    {% load static %} 
+    <link rel="stylesheet" type='text/css' href="{% static 'base.css' %}">
 </head>
 <body>
+    {% load static %}
+
+    
     <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-        </nav>
+        <a href="/" class="home-icon">
+            <img src="{% static 'coding-club-website-logo2.svg' %}" alt="Home">
+        </a>
     </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+
+    <!-- Main content block -->
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
