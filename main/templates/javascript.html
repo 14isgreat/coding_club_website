@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>JavaScript</h1>
+            <p>The Language of the Web</p>
+            <p>Difficulty level: 6/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is JavaScript?</h2>
+
+    <div class="explainer">
+        <p>JavaScript is a versatile programming language used to create interactive websites, server-side applications, and more.</p> 
+        <p>It is an essential technology for modern web development, alongside HTML and CSS.</p>
+    </div>
+
+    <h2 class="subheader">Setting Up</h2>
+
+    <div class="explainer">
+        <p>1. In the HTML file you are working on add the following code in the head:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+        </div>
+        <p>2. Create a file named <code>script.js</code> and add your JavaScript code there.</p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Hello, World!</h2>
+
+    <div class="explainer">
+        <p>1. Output "Hello, World!" to the console:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>console.log("Hello, World!");</code>
+        </div>
+        <p>2. Output it to the browser window:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>document.write("Hello, World!");</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Variables and Data Types</h2>
+
+    <div class="explainer">
+        <p>1. Declare variables:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>let x = 5;
+const y = "Hello, JavaScript!";
+var z = 3.14;</code>
+        </div>
+        <p>2. Log the data type of variables:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>console.log(typeof x);
+console.log(typeof y);
+console.log(typeof z);</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Conditional Statements</h2>
+
+    <div class="explainer">
+        <p>1. If-else example:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>let number = 10;
+if (number > 5) {
+    console.log("Number is greater than 5");
+} else {
+    console.log("Number is 5 or less");
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Loops</h2>
+
+    <div class="explainer">
+        <p>1. For loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code>
+        </div>
+        <p>2. While loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Functions</h2>
+
+    <div class="explainer">
+        <p>1. Define and call a function:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet("Alice"));</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Arrays and Objects</h2>
+
+    <div class="explainer">
+        <p>1. Arrays:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>let fruits = ["apple", "banana", "cherry"];
+fruits.forEach(fruit => console.log(fruit));</code>
+        </div>
+        <p>2. Objects:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>let person = {
+    name: "Alice",
+    age: 25
+};
+console.log(person.name);
+console.log(person.age);</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: DOM Manipulation</h2>
+
+    <div class="explainer">
+        <p>1. Modify the content of an HTML element:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>document.getElementById("myElement").innerText = "New Content";</code>
+        </div>
+        <p>2. Add a click event listener:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Classes</h2>
+
+    <div class="explainer">
+        <p>1. Define a class and create an object:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        return `Hi, I'm ${this.name} and I'm ${this.age} years old.`;
+    }
+}
+
+let person = new Person("Alice", 25);
+console.log(person.greet());</code>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

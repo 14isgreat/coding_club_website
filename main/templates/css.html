@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CSS</h1>
+            <p>Cascading Style Sheets for Web Design</p>
+            <p>Difficulty level: 4/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is CSS?</h2>
+
+    <div class="explainer">
+        <p>CSS (Cascading Style Sheets) is used to control the appearance and layout of web pages. It allows you to style HTML elements, including colors, fonts, spacing, and more.</p>
+    </div>
+
+    <h2 class="subheader">Setting Up</h2>
+
+    <div class="explainer">
+        <p>1. Create a file named <code>styles.css</code> in your project folder.</p>
+        <p>2. Link it to your HTML file by adding the following line in the <code>&lt;head&gt;</code> section:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Selectors</h2>
+
+    <div class="explainer">
+        <p>1. Styling by tag name:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>h1 {
+    color: blue;
+    font-size: 36px;
+}</code>
+        </div>
+        <p>2. Styling by class:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.highlight {
+    background-color: yellow;
+    padding: 5px;
+}</code>
+        </div>
+        <p>3. Styling by ID:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>#main-title {
+    text-align: center;
+    font-weight: bold;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Colors</h2>
+
+    <div class="explainer">
+        <p>1. Use predefined color names:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>body {
+    background-color: lightgray;
+}</code>
+        </div>
+        <p>2. Use hexadecimal, RGB, or HSL values:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>p {
+    color: #ff5733;
+    background-color: rgb(240, 240, 240);
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Fonts</h2>
+
+    <div class="explainer">
+        <p>1. Change the font family:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>body {
+    font-family: Arial, sans-serif;
+}</code>
+        </div>
+        <p>2. Adjust font size and weight:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>h1 {
+    font-size: 48px;
+    font-weight: 700;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Box Model</h2>
+
+    <div class="explainer">
+        <p>1. Add padding and margin:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>div {
+    padding: 10px;
+    margin: 15px;
+}</code>
+        </div>
+        <p>2. Add a border:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>div {
+    border: 2px solid black;
+    border-radius: 10px;
+}</code>
+        </div>
+        <p>3. Set width and height:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>div {
+    width: 200px;
+    height: 100px;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Flexbox</h2>
+
+    <div class="explainer">
+        <p>1. Basic Flexbox container:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}</code>
+        </div>
+        <p>2. Individual flex item properties:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.flex-item {
+    flex: 1;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Grid</h2>
+
+    <div class="explainer">
+        <p>1. Define a grid container:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}</code>
+        </div>
+        <p>2. Position grid items:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.grid-item {
+    grid-column: span 2;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Transitions</h2>
+
+    <div class="explainer">
+        <p>1. Smooth hover effects:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>button {
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: darkblue;
+}</code>
+        </div>
+        <p>2. Animations:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+div {
+    animation: fadeIn 2s;
+}</code>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

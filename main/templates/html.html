@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HTML</h1>
+            <p>Markup Language for Web Development</p>
+            <p>Difficulty level: 3/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is HTML?</h2>
+
+    <div class="explainer">
+        <p>HTML (HyperText Markup Language) is the standard language for creating web pages and applications. It structures the content of a webpage using a series of elements (tags).</p>
+        <p>These tags tell the browser how to display the text, images, links, and other multimedia content.</p>
+    </div>
+
+    <h2 class="subheader">Setting Up</h2>
+
+    <div class="explainer">
+        <p>1. Create a file named <code>index.html</code> in your project folder.</p>
+        <p>2. Write the basic structure of an HTML file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Adding Text</h2>
+
+    <div class="explainer">
+        <p>1. Headings (from largest to smallest):</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;h1&gt;This is a Heading 1&lt;/h1&gt;
+&lt;h2&gt;This is a Heading 2&lt;/h2&gt;
+&lt;h3&gt;This is a Heading 3&lt;/h3&gt;</code>
+        </div>
+        <p>2. Paragraphs:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code>
+        </div>
+        <p>3. Inline formatting:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;strong&gt;Bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Adding Links</h2>
+
+    <div class="explainer">
+        <p>1. Basic link:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code>
+        </div>
+        <p>2. Open link in a new tab:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;a href="https://www.example.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Adding Images</h2>
+
+    <div class="explainer">
+        <p>1. Adding an image:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;img src="path/to/image.jpg" alt="Description of the image"&gt;</code>
+        </div>
+        <p>2. Adding a caption with <code>figure</code>:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;figure&gt;
+    &lt;img src="path/to/image.jpg" alt="Description"&gt;
+    &lt;figcaption&gt;This is the image caption.&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Forms</h2>
+
+    <div class="explainer">
+        <p>1. Basic form structure:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code>
+        </div>
+        <p>2. Add a dropdown:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;select name="options"&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Using Divs for Layout</h2>
+
+    <div class="explainer">
+        <p>1. Create a container:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;div class="container"&gt;
+    &lt;h2&gt;Title&lt;/h2&gt;
+    &lt;p&gt;This is a container for content.&lt;/p&gt;
+&lt;/div&gt;</code>
+        </div>
+        <p>2. Apply CSS for layout:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Embedding Media</h2>
+
+    <div class="explainer">
+        <p>1. Embedding a video:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code>
+        </div>
+        <p>2. Embedding an audio file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Advanced Forms</h2>
+
+    <div class="explainer">
+        <p>1. File upload:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;form action="/upload" method="POST" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="file"&gt;
+    &lt;button type="submit"&gt;Upload&lt;/button&gt;
+&lt;/form&gt;</code>
+        </div>
+        <p>2. Validation with <code>required</code>:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>&lt;input type="text" name="username" required&gt;</code>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

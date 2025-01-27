@@ -1,0 +1,393 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Java</h1>
+            <p>The Language for Enterprise Applications</p>
+            <p>Difficulty level: 7/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is Java?</h2>
+
+    <div class="explainer">
+        <p>Java is a versatile, platform-independent programming language. </p>
+        <p>It runs on the Java Virtual Machine (JVM), enabling "Write Once, Run Anywhere" (WORA).</p>
+        <p>Its strengths include security, multithreading, garbage collection, and its extensive standard library.</p>
+    </div>
+
+    <h2 class="subheader">Setting Up</h2>
+
+    <div class="explainer">
+        <p>1. Download and install the Java Development Kit (JDK) from the <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">official website</a>.</p>
+        <p>2. Set up your IDE. Common choices include IntelliJ IDEA, Eclipse, or VS Code with a Java extension.</p>
+        <p>3. Verify installation by typing <code>java -version</code> and <code>javac -version</code> in the terminal.</p>
+        <p>4. Create a file called <code>HelloWorld.java</code> and add the following code:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code>
+        </div>
+        <p>5. Compile and run the file using:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>javac HelloWorld.java
+java HelloWorld</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Variables and Data Types</h2>
+
+    <div class="explainer">
+        <p>1. Declare variables:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>int number = 10;
+String text = "Hello, Java!";
+double pi = 3.14;</code>
+        </div>
+        <p>2. Print their values:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>System.out.println(number);
+System.out.println(text);
+System.out.println(pi);</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Conditional Statements</h2>
+
+    <div class="explainer">
+        <p>1. If-else example:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>int age = 20;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+} else {
+    System.out.println("You are not an adult.");
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Loops</h2>
+
+    <div class="explainer">
+        <p>1. For loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>for (int i = 0; i < 5; i++) {
+    System.out.println("Count: " + i);
+}</code>
+        </div>
+        <p>2. While loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>int i = 0;
+while (i < 5) {
+    System.out.println("Count: " + i);
+    i++;
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Functions</h2>
+
+    <div class="explainer">
+        <p>1. Define and call a method:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>public class Main {
+    public static void main(String[] args) {
+        greet("Alice");
+    }
+
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Arrays</h2>
+
+    <div class="explainer">
+        <p>1. Declare and print an array:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>int[] numbers = {1, 2, 3, 4, 5};
+for (int number : numbers) {
+    System.out.println(number);
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Classes and Objects</h2>
+
+    <div class="explainer">
+        <p>1. Define a class and create an object:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>public class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void introduce() {
+        System.out.println("Hi, I'm " + name + " and I'm " + age + " years old.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Alice", 25);
+        person.introduce();
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Inheritance</h2>
+
+    <div class="explainer">
+        <p>1. Create a subclass:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("This dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.bark();
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Understanding the JVM</h2>
+
+    <div class="explainer">
+        <p>The JVM (Java Virtual Machine) is an essential component of Java's platform independence. When you compile Java code, it generates <code>.class</code> files containing bytecode. The JVM interprets and executes this bytecode on any platform.</p>
+        <p>1. Compile your code:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>javac Main.java</code>
+        </div>
+        <p>2. Execute the bytecode with the JVM:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>java Main</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Memory Management: Garbage Collection</h2>
+
+    <div class="explainer">
+        <p>Java has an automatic garbage collector that reclaims memory occupied by objects no longer in use. You can request garbage collection manually (though it's not guaranteed to run immediately):</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>System.gc();</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Exception Handling</h2>
+
+    <div class="explainer">
+        <p>Java uses a robust system of exceptions to handle errors. Use <code>try</code>, <code>catch</code>, and <code>finally</code> blocks to manage exceptions:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>try {
+    int result = 10 / 0; // Will throw ArithmeticException
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero: " + e.getMessage());
+} finally {
+    System.out.println("Execution completed.");
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Multithreading</h2>
+
+    <div class="explainer">
+        <p>Java's <code>Thread</code> class and <code>Runnable</code> interface make it simple to write multithreaded programs. Here's an example of creating and running threads:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
+    }
+}</code>
+        </div>
+        <p>Or, using <code>Runnable</code>:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyRunnable());
+        thread.start();
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Interfaces</h2>
+
+    <div class="explainer">
+        <p>Unlike classes, interfaces can only define abstract methods and constants (before Java 8). A class can implement multiple interfaces:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Generics</h2>
+
+    <div class="explainer">
+        <p>Generics provide type safety for collections and other classes. Here's an example with a generic method:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Programming");
+
+        for (String item : list) {
+            System.out.println(item);
+        }
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Annotations</h2>
+
+    <div class="explainer">
+        <p>Annotations provide metadata about your code. Common annotations include <code>@Override</code> and <code>@Deprecated</code>:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class Parent {
+    void display() {
+        System.out.println("Parent class");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Child class");
+    }
+}</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Project: Banking System</h2>
+
+    <div class="explainer">
+        <p>Create a simple banking system with the following requirements:</p>
+        <ul>
+            <li>A <code>BankAccount</code> class with methods to deposit, withdraw, and check balance.</li>
+            <li>Exception handling for invalid operations (e.g., overdraft).</li>
+            <li>Multiple accounts managed in an ArrayList.</li>
+        </ul>
+        <p>Sample code:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) throws Exception {
+        if (amount > balance) {
+            throw new Exception("Insufficient funds.");
+        }
+        balance -= amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        try {
+            account.withdraw(1200);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Balance: " + account.getBalance());
+    }
+}</code>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

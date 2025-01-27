@@ -67,3 +67,7 @@ header {
 .copy-btn:hover {
     background-color: #45a049;
 }
+
+img{
+    width: 600px;
+}

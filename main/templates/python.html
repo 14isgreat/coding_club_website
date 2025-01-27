@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Python Basics</h1>
+            <p>The Versatile Programming Language for All Applications</p>
+            <p>Difficulty level: 5/10</p>
+        </div>
+    </header>
+
+    <h2 class="subheader">What is Python?</h2>
+
+    <div class="explainer">
+        <p>Python is a high-level, interpreted programming language known for its simplicity, readability, and versatility. It is widely used for web development, data analysis, artificial intelligence, and more.</p>
+    </div>
+
+    <h2 class="subheader">Setting Up</h2>
+
+    <div class="explainer">
+        <p>1. Open Visual Studio Code</p>
+        <p>2. Open the <code style="font-size: 18px;">coding-club</code> folder </p>
+        <p>3. Make a new file and name it <code>hello.py</code></p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Hello, World!</h2>
+
+    <div class="explainer">
+        <p>The classic first python program is getting "Hello, World!" displayed in the terminal.</p>
+        <p> To do so, copy-paste the following line in your program:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>print("Hello, World!")</code>
+        </div>
+        <p>Notice that the message you are displaying is enveloped in brackets and quotation marks. (" your message ")</p>
+        <p>If you don't do this, you will get an error message!</p>
+        <p>Click the run button, located in the top right of your screen.</p>
+        <p>You should now see <code>Hello, World!</code> in the terminal. Hooray! You just made your first python program.</p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Variables and Data Types</h2>
+
+    <div class="explainer">
+        <p>1. Variables are a way of saving data. You can assign different values to variables, including numbers and text.</p>
+        <p>Here is an example. Copy it into your code:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>x = 5
+y = "Hello, Python!"
+z = 3.14</code>
+        </div>
+        <p>In Python terminology, you call text "string", numbers "integers", and decimals "floats".</p>
+        <p>Notice that strings have " " around them (that's why we needed the quatation marks while printing "Hello, World!"), while numbers don't. </p>
+        <p>2. Now that you have these variables, you can use them.</p>
+
+        <p>What do you think will be displayed in the terminal if you run the following line?</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>print(x+z)</code>
+        </div>
+        <p>It should display <code>8.14</code>. Why? Because if <code>x = 5</code> and <code>z = 3.14</code> , <code>x + y = 5 + 3.14 = 8.14</code>!</p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Conditional Statements</h2>
+
+    <div class="explainer">
+        <p>1. If-else statements are a way of checking if something is true.</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is less than or equal to 5")</code>
+        </div>
+        <p>In this example, since <code>x > 5</code>, it will do whatever is in the next line. In this case print <code>x is greater than 5</code>.</p>
+        <p>Make sure that the next line afterwards is indented, otherwise you will get an error message!</p>
+    </div>
+
+    <h2 class="subheader">Tutorial: Loops</h2>
+
+    <div class="explainer">
+        <p>With loops you can get something to repeat a certain amount of times. There are different types of loops.</p>
+        <p>1. For loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>for i in range(5):
+    print(i)</code>
+        </div>
+        <p>This loop prints the variable <code>i</code> 5 times. </p>
+        <p>In For loops, you must type "for", then create a variable, in this case "i" (short for iteration) and then "in range():". </p>
+        <p>In between the brackets () you must put the amount of times you want it to repeat.</p>
+        <p>2. While loop:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>x = 0
+while x < 5:
+    print(x)
+    x = x + 1 # because of this line, 1 is added to x each time it repeats</code>
+        </div>
+        <p>With While loops you must type "while" and afterwards there must be a condition. In this case: x < 5</p>
+        <p>While loops repeat forever, until the condition is no longer met.</p>
+        <p>Be careful, if your condition is never met your program will run forever!</p>
+        <p>If you <i>really</i> want something to run forever:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>while True: # True will always be True, so this runs forever 
+        print("hello")
+            </code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Functions</h2>
+
+    <div class="explainer">
+        <p>Functions are a way of saving code. </p>
+        <p> For example, if you want something to happen every now and then, but not in a way where you can just put it in a loop.</p>
+        <p>1. Define and call a function:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>def greet(name):
+    return f"Hello, {name}!"
+
+greeting = greet("Alice")
+print(greeting)</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Lists and Dictionaries</h2>
+
+    <div class="explainer">
+        <p>With lists and dictionaries you can also save information in a structured manner.</p>
+        <p>1. Lists:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)</code>
+        </div>
+        <p>2. Dictionaries:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>person = {"name": "Alice", "age": 25}
+print(person["name"])
+print(person["age"])</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Classes and Objects</h2>
+
+    <div class="explainer">
+        <p>1. Define a class and create an object:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        return f"Hi, I'm {self.name} and I'm {self.age} years old."
+
+person = Person("Alice", 25)
+print(person.greet())</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: File Handling</h2>
+
+    <div class="explainer">
+        <p>1. Read a file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>with open("example.txt", "r") as file:
+    print(file.read())</code>
+        </div>
+        <p>2. Write to a file:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>with open("example.txt", "w") as file:
+    file.write("Hello, Python!")</code>
+        </div>
+    </div>
+
+    <h2 class="subheader">Tutorial: Error Handling</h2>
+
+    <div class="explainer">
+        <p>1. Use try-except:</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")</code>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
