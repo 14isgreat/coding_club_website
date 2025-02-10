@@ -121,7 +121,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # If you have a "static" folder in your project
+    os.path.join(BASE_DIR, 'main', 'static'),  # If you have a "static" folder in your project
 ]
 
 # Default primary key field type
