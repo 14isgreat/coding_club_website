@@ -34,13 +34,26 @@
             </ul>
         </div>
     </nav>
-    <div class="explainer">
+    <div class="intro">
         <h1>Welcome to the Coding Club!</h1>
         <p> Meeting times:</p>
         <p> Monday & Friday, @12:20, W105d (Library) </p>
         <p>Any questions? Send an email to <a href="mailto:coding-club@jfksberlin.org">coding-club@jfksberlin.org</a></p>
         <a href="/about/">Go to About Page</a>
     </div> 
+
+    <h2 class="subheader">Getting Started</h2>
+
+    <div class="explainer">
+        <p>Watch this video to see how to get started with your first program.</p>
+        <p>This video was made on a Mac, on Windows it will look a little different, but follow the same steps.</p>
+        <video width="640" height="360" controls>
+            <source src="{% static 'coding-club-intro-video.mov' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+    </div>
+
 </body>
 </html>
 {% endblock %}
