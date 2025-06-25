@@ -11,5 +11,6 @@ urlpatterns = [
     path('pygame/', views.pygame, name='pygame'),
     path('javascript/', views.javascript, name='javascript'),
     path('java/', views.java, name='java'),
+    path('github/', views.github, name='github'),
     path('about/', views.about, name='about'),  # About page view
 ]
