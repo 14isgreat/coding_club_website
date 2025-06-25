@@ -27,5 +27,8 @@ def javascript(request):
 def java(request):
     return render(request, 'java.html') 
 
+def github(request):
+    return render(request, 'github.html') 
+
 def about(request):
     return render(request, 'about.html')  # Render the about.html template
