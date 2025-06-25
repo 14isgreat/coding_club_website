@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django.css' %}">
+    <script src="{% static 'code.js' %}"></script>
+</head>
+<body>
+
+    <header>
+        <h1>GitHub</h1>
+        <p>A way to save your files and work with others</p>
+        <p>Difficulty level: 5/10</p>
+    </header>
+
+    <h2 class="subheader">What is GitHub?</h2>
+
+    <div class="explainer" id="intro">
+        <p>GitHub is an online platform where developers store, share, and collaborate on code. </p>
+        <p>It uses version control, allowing users to track changes, manage projects, and work together efficiently. </p>
+        <p>GitHub makes it easy to contribute to open-source software, review code, and keep a history of all updates and improvements.</p>
+        <p>Website link: <a target="_blank" href="https://github.com">github.com</a> </p>
+    </div>
+
+    <h2 class="subheader">How to push (save) your project to GitHub</h2>
+
+    <div class="explainer">
+        <p> 1. Go to terminal ( Terminal > New Terminal if no terminal is open )</p>
+        <p> 2. Initialize git </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git init </code>
+        </div>
+        <p> 3. Replace username and repository with your actual GitHub username and repository name: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git remote add origin https://github.com/username/repository.git </code>
+        </div>
+        <p> </p>
+        <p> 4. The . stages all files in the directory. You can also add specific files. </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git add . </code>
+        </div>
+        <p> 5. Commit Your Changes </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git commit -m "Your commit message" </code>
+        </div>
+        <p> 6. Push to GitHub</p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git push -u origin main </code>
+        </div>
+        <p> Now you can go to your repository in GitHub, the changes you made should be visible there </p>
+    </div>
+
+    <h2 class="subheader">How to pull code from a GitHub repository</h2>
+
+    <div class="explainer">
+        <p> 1. Go to terminal ( Terminal > New Terminal if no terminal is open )</p>
+        <p> 2. Initialize git </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git init </code>
+        </div>
+        <p> 3. If you're pulling the code for the first time: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git clone https://github.com/username/repo-name.git </code>
+        </div>
+        <p> </p>
+        <p> 4. If you already cloned the repo earlier, run this inside the repo folder to get the newest version: </p>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code> git pull </code>
+        </div>
+        <p> That's it! </p>
+    </div>
+
+   
+</body>
+</html>
+{% endblock %}
