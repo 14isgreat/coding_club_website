@@ -28,6 +28,8 @@
     <h2 class="subheader">Setting Up</h2>
 
     <div class="explainer">
+        <p>Follow the tutorial on the home page to set up GitHub Codespaces if you haven't already</p>
+        <p>OR</p>
         <p>1. Open Visual Studio Code</p>
         <p>2. Open the <code style="font-size: 18px;">coding-club</code> folder </p>
         <p>3. Make a new file and name it <code>hello.py</code></p>
@@ -120,6 +122,909 @@ while x < 5:
         </div>
     </div>
 
+    <h2 class="subheader">Tutorial: Lists and Dictionaries</h2>
+
+    <div class="explainer">
+
+    <p>Lists and dictionaries are two of the most useful ways to store and organize information in Python. They allow you to keep multiple pieces of data together instead of creating a separate variable for every value.</p>
+
+    <p><strong>1. Lists:</strong></p>
+
+    <p>A list stores multiple values in a specific order. Lists are created using square brackets <code>[]</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print(fruits)</code>
+    </div>
+
+    <p>A list can contain strings, numbers, booleans, or even different types of data together.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>names = ["Alice", "Bob", "Charlie"]
+
+numbers = [10, 20, 30, 40]
+
+mixed = ["Alice", 25, True, 3.14]</code>
+    </div>
+
+    <p><strong>Accessing List Items:</strong></p>
+
+    <p>Each item in a list has a position called an <strong>index</strong>. Python starts counting indexes from 0.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])</code>
+    </div>
+
+    <p>The output is:</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>apple
+banana
+cherry</code>
+    </div>
+
+    <p>You can also use negative indexes. <code>-1</code> means the last item, <code>-2</code> means the second-to-last item, and so on.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print(fruits[-1])
+print(fruits[-2])</code>
+    </div>
+
+    <p>The output is:</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>cherry
+banana</code>
+    </div>
+
+    <p><strong>Changing List Items:</strong></p>
+
+    <p>Lists are <strong>mutable</strong>, which means you can change their contents after creating them.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+fruits[1] = "orange"
+
+print(fruits)</code>
+    </div>
+
+    <p>The list is now:</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>["apple", "orange", "cherry"]</code>
+    </div>
+
+    <p><strong>Adding Items to a List:</strong></p>
+
+    <p>The <code>append()</code> method adds one item to the end of a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana"]
+
+fruits.append("cherry")
+
+print(fruits)</code>
+    </div>
+
+    <p>Use <code>insert()</code> when you want to add an item at a specific position.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "cherry"]
+
+fruits.insert(1, "banana")
+
+print(fruits)</code>
+    </div>
+
+    <p>The number <code>1</code> tells Python where to insert the new item.</p>
+
+    <p>You can use <code>extend()</code> to add several items from another list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana"]
+
+fruits.extend(["cherry", "orange"])
+
+print(fruits)</code>
+    </div>
+
+    <p><strong>append() vs extend():</strong></p>
+
+    <p><code>append()</code> adds the entire object as one item, while <code>extend()</code> adds each item individually.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [1, 2]
+
+numbers.append([3, 4])
+
+print(numbers)
+# [1, 2, [3, 4]]</code>
+    </div>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [1, 2]
+
+numbers.extend([3, 4])
+
+print(numbers)
+# [1, 2, 3, 4]</code>
+    </div>
+
+    <p><strong>Removing Items:</strong></p>
+
+    <p>The <code>remove()</code> method removes a specific value from a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+fruits.remove("banana")
+
+print(fruits)</code>
+    </div>
+
+    <p>If the value appears more than once, <code>remove()</code> removes the first matching value.</p>
+
+    <p>The <code>pop()</code> method removes an item using its index and returns the removed item.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+removed = fruits.pop()
+
+print(removed)
+print(fruits)</code>
+    </div>
+
+    <p>Without an index, <code>pop()</code> removes the last item. You can also specify an index.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+removed = fruits.pop(1)
+
+print(removed)
+print(fruits)</code>
+    </div>
+
+    <p>The <code>del</code> statement can also remove an item.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [10, 20, 30, 40]
+
+del numbers[1]
+
+print(numbers)</code>
+    </div>
+
+    <p>The <code>clear()</code> method removes every item from a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [1, 2, 3, 4]
+
+numbers.clear()
+
+print(numbers)</code>
+    </div>
+
+    <p><strong>Finding the Length of a List:</strong></p>
+
+    <p>The <code>len()</code> function tells you how many items are in a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print(len(fruits))</code>
+    </div>
+
+    <p><strong>Checking if an Item Exists:</strong></p>
+
+    <p>You can use <code>in</code> to check whether a value exists in a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print("banana" in fruits)
+print("orange" in fruits)</code>
+    </div>
+
+    <p>You can also use <code>not in</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+print("orange" not in fruits)</code>
+    </div>
+
+    <p><strong>Looping Through a List:</strong></p>
+
+    <p>A <code>for</code> loop is commonly used to process every item in a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)</code>
+    </div>
+
+    <p><strong>Using enumerate():</strong></p>
+
+    <p>If you need both the index and the value, use <code>enumerate()</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "cherry"]
+
+for index, fruit in enumerate(fruits):
+    print(index, fruit)</code>
+    </div>
+
+    <p><strong>List Slicing:</strong></p>
+
+    <p>Slicing lets you take a portion of a list. The basic syntax is <code>list[start:stop]</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [0, 1, 2, 3, 4, 5]
+
+print(numbers[1:4])</code>
+    </div>
+
+    <p>This produces <code>[1, 2, 3]</code>. The stopping position is not included.</p>
+
+    <p>You can leave out the start or end position.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [0, 1, 2, 3, 4, 5]
+
+print(numbers[:3])
+print(numbers[3:])</code>
+    </div>
+
+    <p>You can also use a step value.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [0, 1, 2, 3, 4, 5]
+
+print(numbers[::2])</code>
+    </div>
+
+    <p>This selects every second item.</p>
+
+    <p>A useful trick is <code>[::-1]</code>, which creates a reversed copy of the list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [1, 2, 3, 4, 5]
+
+print(numbers[::-1])</code>
+    </div>
+
+    <p><strong>Sorting Lists:</strong></p>
+
+    <p>The <code>sort()</code> method sorts a list in place.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [5, 2, 8, 1, 3]
+
+numbers.sort()
+
+print(numbers)</code>
+    </div>
+
+    <p>Use <code>reverse=True</code> to sort from largest to smallest.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [5, 2, 8, 1, 3]
+
+numbers.sort(reverse=True)
+
+print(numbers)</code>
+    </div>
+
+    <p><code>sorted()</code> creates a new sorted list without changing the original.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [5, 2, 8, 1, 3]
+
+sorted_numbers = sorted(numbers)
+
+print(sorted_numbers)
+print(numbers)</code>
+    </div>
+
+    <p><strong>Useful List Methods:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [1, 2, 2, 3, 4, 2]
+
+print(numbers.count(2))
+print(numbers.index(3))</code>
+    </div>
+
+    <p><code>count()</code> tells you how many times a value appears. <code>index()</code> tells you where the first matching value appears.</p>
+
+    <p><strong>Useful Functions With Lists:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [10, 20, 30, 40]
+
+print(len(numbers))
+print(min(numbers))
+print(max(numbers))
+print(sum(numbers))</code>
+    </div>
+
+    <p>These functions find the length, smallest value, largest value, and total of the numbers.</p>
+
+    <p><strong>List Concatenation:</strong></p>
+
+    <p>You can combine lists using the <code>+</code> operator.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>first = [1, 2, 3]
+second = [4, 5, 6]
+
+combined = first + second
+
+print(combined)</code>
+    </div>
+
+    <p>You can repeat a list using <code>*</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>numbers = [0] * 5
+
+print(numbers)</code>
+    </div>
+
+    <p><strong>List Comprehensions:</strong></p>
+
+    <p>A list comprehension is a short way to create a new list from another collection.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>squares = [x * x for x in range(6)]
+
+print(squares)</code>
+    </div>
+
+    <p>You can also include a condition.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>even_numbers = [x for x in range(10) if x % 2 == 0]
+
+print(even_numbers)</code>
+    </div>
+
+    <p><strong>Nested Lists:</strong></p>
+
+    <p>A list can contain other lists. This is useful for grids, tables, and other structured data.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrix[0])
+print(matrix[1][2])</code>
+    </div>
+
+    <p><strong>Copying Lists:</strong></p>
+
+    <p>Be careful when assigning one list to another variable. Both variables can refer to the same list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>first = [1, 2, 3]
+second = first
+
+second.append(4)
+
+print(first)</code>
+    </div>
+
+    <p>To create a separate shallow copy, use <code>copy()</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>first = [1, 2, 3]
+second = first.copy()
+
+second.append(4)
+
+print(first)
+print(second)</code>
+    </div>
+
+
+    <p><strong>2. Dictionaries:</strong></p>
+
+    <p>A dictionary stores information as <strong>key-value pairs</strong>. Dictionaries are created using curly brackets <code>{}</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "Berlin"
+}
+
+print(person)</code>
+    </div>
+
+    <p>In this example, <code>"name"</code>, <code>"age"</code>, and <code>"city"</code> are keys. Their associated values are <code>"Alice"</code>, <code>25</code>, and <code>"Berlin"</code>.</p>
+
+    <p><strong>Accessing Dictionary Values:</strong></p>
+
+    <p>You can access a dictionary value by using its key.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person["name"])
+print(person["age"])</code>
+    </div>
+
+    <p><strong>Using get():</strong></p>
+
+    <p>If you try to access a key that does not exist using square brackets, Python raises an error. The <code>get()</code> method provides a safer alternative.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice"
+}
+
+print(person.get("name"))
+print(person.get("age"))</code>
+    </div>
+
+    <p>If the key does not exist, <code>get()</code> returns <code>None</code> by default. You can provide your own default value.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice"
+}
+
+print(person.get("age", 0))</code>
+    </div>
+
+    <p><strong>Changing Dictionary Values:</strong></p>
+
+    <p>You can change an existing value by assigning a new value to its key.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+person["age"] = 26
+
+print(person)</code>
+    </div>
+
+    <p><strong>Adding New Dictionary Items:</strong></p>
+
+    <p>You can add a new key-value pair simply by assigning a value to a new key.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice"
+}
+
+person["age"] = 25
+person["city"] = "Berlin"
+
+print(person)</code>
+    </div>
+
+    <p><strong>Removing Dictionary Items:</strong></p>
+
+    <p>The <code>pop()</code> method removes a key and returns its value.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+age = person.pop("age")
+
+print(age)
+print(person)</code>
+    </div>
+
+    <p>You can use <code>del</code> to delete a specific key.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+del person["age"]
+
+print(person)</code>
+    </div>
+
+    <p>The <code>popitem()</code> method removes and returns the last inserted key-value pair.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "Berlin"
+}
+
+item = person.popitem()
+
+print(item)
+print(person)</code>
+    </div>
+
+    <p>The <code>clear()</code> method removes all items from a dictionary.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+person.clear()
+
+print(person)</code>
+    </div>
+
+    <p><strong>Checking if a Key Exists:</strong></p>
+
+    <p>Use <code>in</code> to check whether a key exists in a dictionary.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print("name" in person)
+print("email" in person)</code>
+    </div>
+
+    <p><strong>Finding the Length of a Dictionary:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "Berlin"
+}
+
+print(len(person))</code>
+    </div>
+
+    <p><strong>Getting Dictionary Keys:</strong></p>
+
+    <p>The <code>keys()</code> method gives you the dictionary's keys.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person.keys())</code>
+    </div>
+
+    <p><strong>Getting Dictionary Values:</strong></p>
+
+    <p>The <code>values()</code> method gives you the dictionary's values.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person.values())</code>
+    </div>
+
+    <p><strong>Getting Keys and Values Together:</strong></p>
+
+    <p>The <code>items()</code> method gives you both the key and its value.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person.items())</code>
+    </div>
+
+    <p><strong>Looping Through a Dictionary:</strong></p>
+
+    <p>You can loop through the keys of a dictionary using a <code>for</code> loop.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "Berlin"
+}
+
+for key in person:
+    print(key)</code>
+    </div>
+
+    <p>You can loop through the values using <code>values()</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for value in person.values():
+    print(value)</code>
+    </div>
+
+    <p>To get both keys and values, use <code>items()</code>.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for key, value in person.items():
+    print(key, value)</code>
+    </div>
+
+    <p><strong>Updating Dictionaries:</strong></p>
+
+    <p>The <code>update()</code> method can add several items or change existing ones.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+person.update({
+    "age": 26,
+    "city": "Berlin"
+})
+
+print(person)</code>
+    </div>
+
+    <p><strong>Dictionary Comprehensions:</strong></p>
+
+    <p>Just like lists, dictionaries can be created using comprehensions.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>squares = {x: x * x for x in range(5)}
+
+print(squares)</code>
+    </div>
+
+    <p>You can also add conditions.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>even_squares = {
+    x: x * x
+    for x in range(10)
+    if x % 2 == 0
+}
+
+print(even_squares)</code>
+    </div>
+
+    <p><strong>Nested Dictionaries:</strong></p>
+
+    <p>A dictionary can contain another dictionary. This is useful for storing more complex information.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>users = {
+    "alice": {
+        "age": 25,
+        "city": "Berlin"
+    },
+    "bob": {
+        "age": 30,
+        "city": "Hamburg"
+    }
+}
+
+print(users["alice"]["age"])
+print(users["bob"]["city"])</code>
+    </div>
+
+    <p><strong>Dictionaries Containing Lists:</strong></p>
+
+    <p>A dictionary value can also be a list.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>student = {
+    "name": "Alice",
+    "subjects": ["Math", "Python", "Physics"]
+}
+
+print(student["subjects"])
+
+print(student["subjects"][0])</code>
+    </div>
+
+    <p><strong>Lists of Dictionaries:</strong></p>
+
+    <p>A very common Python pattern is a list containing multiple dictionaries. This is useful for storing multiple records.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>students = [
+    {"name": "Alice", "age": 20},
+    {"name": "Bob", "age": 22},
+    {"name": "Charlie", "age": 21}
+]
+
+for student in students:
+    print(student["name"])</code>
+    </div>
+
+    <p><strong>Counting Items With a Dictionary:</strong></p>
+
+    <p>Dictionaries are very useful for counting how often something appears.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
+
+counts = {}
+
+for word in words:
+    counts[word] = counts.get(word, 0) + 1
+
+print(counts)</code>
+    </div>
+
+    <p><strong>Lists vs Dictionaries:</strong></p>
+
+    <p>Lists and dictionaries are both collections, but they are useful for different situations.</p>
+
+    <p>Use a <strong>list</strong> when you have an ordered collection of items and want to access those items by their position.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>colors = ["red", "green", "blue"]
+
+print(colors[0])</code>
+    </div>
+
+    <p>Use a <strong>dictionary</strong> when you want to connect a key to a value and access information using that key.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person["name"])</code>
+    </div>
+
+    <p><strong>Quick List Reference:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>my_list.append(x)       # Add an item
+my_list.insert(i, x)   # Insert an item
+my_list.extend(items)   # Add multiple items
+my_list.remove(x)       # Remove an item
+my_list.pop()           # Remove the last item
+my_list.pop(i)          # Remove an item by index
+my_list.clear()         # Remove everything
+my_list.index(x)        # Find an item's index
+my_list.count(x)        # Count an item
+my_list.sort()          # Sort the list
+my_list.reverse()       # Reverse the list
+my_list.copy()          # Copy the list</code>
+    </div>
+
+    <p><strong>Quick Dictionary Reference:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>my_dict.get(key)          # Safely get a value
+my_dict.keys()             # Get all keys
+my_dict.values()           # Get all values
+my_dict.items()            # Get keys and values
+my_dict.update(other)      # Add or update items
+my_dict.pop(key)           # Remove a key
+my_dict.popitem()          # Remove the last item
+my_dict.clear()            # Remove everything
+my_dict.copy()             # Copy the dictionary</code>
+    </div>
+
+    <p><strong>Remember:</strong></p>
+
+    <p>Lists use <strong>indexes</strong> to access items, while dictionaries use <strong>keys</strong>. Lists are great for ordered collections, while dictionaries are great for connecting related pieces of information.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code># List - access by index
+fruits = ["apple", "banana", "cherry"]
+
+print(fruits[0])
+
+
+# Dictionary - access by key
+person = {
+    "name": "Alice",
+    "age": 25
+}
+
+print(person["name"])</code>
+    </div>
+
+</div>
+    
     <h2 class="subheader">Tutorial: Functions</h2>
 
     <div class="explainer">
@@ -133,26 +1038,6 @@ while x < 5:
 
 greeting = greet("Alice")
 print(greeting)</code>
-        </div>
-    </div>
-
-    <h2 class="subheader">Tutorial: Lists and Dictionaries</h2>
-
-    <div class="explainer">
-        <p>With lists and dictionaries you can also save information in a structured manner.</p>
-        <p>1. Lists:</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>fruits = ["apple", "banana", "cherry"]
-for fruit in fruits:
-    print(fruit)</code>
-        </div>
-        <p>2. Dictionaries:</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>person = {"name": "Alice", "age": 25}
-print(person["name"])
-print(person["age"])</code>
         </div>
     </div>
 
