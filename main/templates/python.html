@@ -73,21 +73,813 @@ z = 3.14</code>
         <p>It should display <code>8.14</code>. Why? Because if <code>x = 5</code> and <code>z = 3.14</code> , <code>x + y = 5 + 3.14 = 8.14</code>!</p>
     </div>
 
-    <h2 class="subheader">Tutorial: Conditional Statements</h2>
 
-    <div class="explainer">
-        <p>1. If-else statements are a way of checking if something is true.</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>x = 10
+<h2 class="subheader">Tutorial: Conditional Statements</h2>
+
+<div class="explainer">
+
+    <p>
+        1. <strong>What are conditional statements?</strong>
+    </p>
+
+    <p>
+        Conditional statements allow your program to make decisions.
+        They check whether a condition is true or false and execute
+        different pieces of code depending on the result.
+    </p>
+
+    <p>
+        For example, you could use conditional statements to check
+        whether someone is old enough to enter a website, whether
+        a number is positive, or whether a player has won a game.
+    </p>
+
+    <p>
+        Python uses three main conditional keywords:
+    </p>
+
+    <ul>
+        <li><code>if</code> — checks a condition.</li>
+        <li><code>elif</code> — checks another condition if the previous one was false.</li>
+        <li><code>else</code> — runs when none of the previous conditions were true.</li>
+    </ul>
+
+
+    <p>
+        2. <strong>The if statement</strong>
+    </p>
+
+    <p>
+        An <code>if</code> statement checks whether a condition is true.
+        If it is true, Python executes the indented code underneath it.
+        If the condition is false, Python skips that code.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 10
+
+if x > 5:
+    print("x is greater than 5")
+
+print("This line always runs")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>x is greater than 5
+This line always runs</code>
+    </div>
+
+    <p>
+        In this example, <code>x</code> is assigned the value
+        <code>10</code>. Python checks whether <code>x > 5</code>.
+        Since 10 is greater than 5, the condition is true and
+        the indented <code>print()</code> statement runs.
+    </p>
+
+    <p>
+        The final <code>print()</code> statement is not indented,
+        so it is outside the <code>if</code> block. It runs
+        regardless of whether the condition is true or false.
+    </p>
+
+
+    <p>
+        3. <strong>The if-else statement</strong>
+    </p>
+
+    <p>
+        An <code>if-else</code> statement lets your program choose
+        between two different actions.
+    </p>
+
+    <p>
+        The <code>if</code> block runs when the condition is true.
+        Otherwise, the <code>else</code> block runs.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 10
+
 if x > 5:
     print("x is greater than 5")
 else:
     print("x is less than or equal to 5")</code>
-        </div>
-        <p>In this example, since <code>x > 5</code>, it will do whatever is in the next line. In this case print <code>x is greater than 5</code>.</p>
-        <p>Make sure that the next line afterwards is indented, otherwise you will get an error message!</p>
     </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>x is greater than 5</code>
+    </div>
+
+    <p>
+        Since <code>x</code> is 10, the condition
+        <code>x > 5</code> is true. Python therefore executes
+        the first <code>print()</code> statement and skips the
+        <code>else</code> block.
+    </p>
+
+    <p>
+        Try changing <code>x = 10</code> to <code>x = 3</code>.
+        The condition will now be false, so the program will print:
+    </p>
+
+    <div class="code-container">
+        <code>x is less than or equal to 5</code>
+    </div>
+
+    <p>
+        The <code>else</code> block does not need a condition.
+        It automatically runs when the <code>if</code> condition
+        is false.
+    </p>
+
+
+    <p>
+        4. <strong>Comparison operators</strong>
+    </p>
+
+    <p>
+        Conditions often use comparison operators to compare
+        two values. These comparisons produce a Boolean value:
+        either <code>True</code> or <code>False</code>.
+    </p>
+
+    <ul>
+        <li><code>==</code> — equal to</li>
+        <li><code>!=</code> — not equal to</li>
+        <li><code>&gt;</code> — greater than</li>
+        <li><code>&lt;</code> — less than</li>
+        <li><code>&gt;=</code> — greater than or equal to</li>
+        <li><code>&lt;=</code> — less than or equal to</li>
+    </ul>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 10
+
+print(x == 10)
+print(x != 10)
+print(x > 5)
+print(x < 5)
+print(x >= 10)
+print(x <= 10)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>True
+False
+True
+False
+True
+True</code>
+    </div>
+
+    <p>
+        Notice that <code>==</code> and <code>=</code> have
+        different meanings:
+    </p>
+
+    <ul>
+        <li><code>=</code> assigns a value to a variable.</li>
+        <li><code>==</code> checks whether two values are equal.</li>
+    </ul>
+
+    <p>
+        For example, <code>x = 10</code> stores 10 in
+        <code>x</code>, while <code>x == 10</code> checks
+        whether <code>x</code> is equal to 10.
+    </p>
+
+
+    <p>
+        5. <strong>The elif statement</strong>
+    </p>
+
+    <p>
+        Sometimes you need to check more than two possibilities.
+        This is where <code>elif</code> (short for "else if")
+        becomes useful.
+    </p>
+
+    <p>
+        Python checks the conditions from top to bottom.
+        The first condition that is true has its block executed.
+        The remaining conditions are skipped.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>temperature = 25
+
+if temperature > 30:
+    print("It is hot")
+elif temperature > 20:
+    print("It is warm")
+elif temperature > 10:
+    print("It is cool")
+else:
+    print("It is cold")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>It is warm</code>
+    </div>
+
+    <p>
+        The first condition, <code>temperature > 30</code>,
+        is false. Python then checks
+        <code>temperature > 20</code>, which is true.
+        It prints <code>It is warm</code> and skips the rest.
+    </p>
+
+    <p>
+        You can use as many <code>elif</code> statements as
+        you need. You can also use an <code>if</code> statement
+        without an <code>else</code> or <code>elif</code>.
+    </p>
+
+
+    <p>
+        6. <strong>Using logical operators</strong>
+    </p>
+
+    <p>
+        Logical operators allow you to combine multiple conditions.
+        Python has three main logical operators:
+    </p>
+
+    <ul>
+        <li><code>and</code> — true only if both conditions are true.</li>
+        <li><code>or</code> — true if at least one condition is true.</li>
+        <li><code>not</code> — reverses a Boolean value.</li>
+    </ul>
+
+    <p><strong>Using and:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = 20
+
+if age >= 18 and age <= 30:
+    print("You are between 18 and 30")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>You are between 18 and 30</code>
+    </div>
+
+    <p>
+        Both conditions must be true for the message to print.
+        Here, the age is at least 18 and at most 30.
+    </p>
+
+    <p>
+        Python also allows you to write this comparison more
+        simply using a chained comparison:
+    </p>
+
+    <div class="code-container">
+        <code>if 18 <= age <= 30:
+    print("You are between 18 and 30")</code>
+    </div>
+
+    <p><strong>Using or:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>day = "Saturday"
+
+if day == "Saturday" or day == "Sunday":
+    print("It is the weekend")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>It is the weekend</code>
+    </div>
+
+    <p>
+        Only one of the conditions needs to be true.
+        Since the day is Saturday, the message is printed.
+    </p>
+
+    <p><strong>Using not:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>is_raining = False
+
+if not is_raining:
+    print("You can go for a walk")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>You can go for a walk</code>
+    </div>
+
+    <p>
+        The <code>not</code> operator reverses the Boolean value.
+        Since <code>is_raining</code> is <code>False</code>,
+        <code>not is_raining</code> evaluates to
+        <code>True</code>.
+    </p>
+
+
+    <p>
+        7. <strong>Nested if statements</strong>
+    </p>
+
+    <p>
+        A nested conditional is an <code>if</code> statement
+        placed inside another conditional block.
+        This is useful when one decision depends on another.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = 20
+has_ticket = True
+
+if age >= 18:
+    if has_ticket:
+        print("You can enter")
+    else:
+        print("You need a ticket")
+else:
+    print("You must be at least 18")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>You can enter</code>
+    </div>
+
+    <p>
+        First, Python checks whether the age is at least 18.
+        If it is, Python checks the second condition:
+        whether the person has a ticket.
+    </p>
+
+    <p>
+        Since both conditions are satisfied, the program prints
+        <code>You can enter</code>.
+    </p>
+
+
+    <p>
+        8. <strong>Checking whether a number is positive, negative, or zero</strong>
+    </p>
+
+    <p>
+        Conditional statements are especially useful when
+        classifying values.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>number = -4
+
+if number > 0:
+    print("The number is positive")
+elif number < 0:
+    print("The number is negative")
+else:
+    print("The number is zero")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>The number is negative</code>
+    </div>
+
+    <p>
+        Python checks whether the number is greater than zero.
+        If not, it checks whether it is less than zero.
+        If neither condition is true, the number must be zero.
+    </p>
+
+    <p>
+        Try changing <code>number</code> to
+        <code>7</code> or <code>0</code> and observe the output.
+    </p>
+
+
+    <p>
+        9. <strong>Checking whether a number is even or odd</strong>
+    </p>
+
+    <p>
+        The modulo operator (<code>%</code>) gives the remainder
+        after division.
+    </p>
+
+    <p>
+        If a number is divided by 2 and the remainder is 0,
+        the number is even. Otherwise, it is odd.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>number = 7
+
+if number % 2 == 0:
+    print("The number is even")
+else:
+    print("The number is odd")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>The number is odd</code>
+    </div>
+
+    <p>
+        In this example, <code>7 % 2</code> evaluates to
+        <code>1</code>. Since the remainder is not zero,
+        the number is odd.
+    </p>
+
+
+    <p>
+        10. <strong>Checking text with conditional statements</strong>
+    </p>
+
+    <p>
+        Conditions can also compare strings.
+        This is useful when checking a user's input or
+        comparing words.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>answer = "yes"
+
+if answer == "yes":
+    print("You answered yes")
+else:
+    print("You did not answer yes")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>You answered yes</code>
+    </div>
+
+    <p>
+        String comparisons are case-sensitive.
+        This means <code>"yes"</code> and <code>"Yes"</code>
+        are considered different strings.
+    </p>
+
+    <p>
+        If you want to accept different capitalizations,
+        you can use the <code>lower()</code> method:
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>answer = "YES"
+
+if answer.lower() == "yes":
+    print("You answered yes")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>You answered yes</code>
+    </div>
+
+
+    <p>
+        11. <strong>Indentation in Python</strong>
+    </p>
+
+    <p>
+        Indentation is the whitespace at the beginning of a line.
+        Python uses indentation to determine which statements
+        belong to a conditional block.
+    </p>
+
+    <p>
+        The standard convention is to use four spaces
+        for each indentation level.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 10
+
+if x > 5:
+    print("This line is indented")
+    print("This line is also inside the if block")
+
+print("This line is outside the if block")</code>
+    </div>
+
+    <p>
+        Both indented lines belong to the <code>if</code> block.
+        The final line is not indented, so it runs independently
+        of the condition.
+    </p>
+
+    <p>
+        <strong>Incorrect indentation:</strong>
+    </p>
+
+    <div class="code-container">
+        <code>if x > 5:
+print("Hello")</code>
+    </div>
+
+    <p>
+        This causes an <code>IndentationError</code> because
+        Python expects the body of the <code>if</code> statement
+        to be indented.
+    </p>
+
+    <p>
+        Also remember that the colon (<code>:</code>) at the
+        end of an <code>if</code>, <code>elif</code>, or
+        <code>else</code> line is required.
+    </p>
+
+
+    <p>
+        12. <strong>Common mistakes</strong>
+    </p>
+
+    <p><strong>Mistake 1: Using = instead of ==</strong></p>
+
+    <div class="code-container">
+        <code># Incorrect
+if x = 10:
+    print("x is 10")
+
+# Correct
+if x == 10:
+    print("x is 10")</code>
+    </div>
+
+    <p>
+        Use <code>=</code> to assign values and
+        <code>==</code> to compare values.
+    </p>
+
+    <p><strong>Mistake 2: Forgetting the colon</strong></p>
+
+    <div class="code-container">
+        <code># Incorrect
+if x > 5
+    print("Greater than 5")
+
+# Correct
+if x > 5:
+    print("Greater than 5")</code>
+    </div>
+
+    <p>
+        Conditional statements require a colon at the end
+        of the condition line.
+    </p>
+
+    <p><strong>Mistake 3: Incorrect indentation</strong></p>
+
+    <div class="code-container">
+        <code># Incorrect
+if x > 5:
+print("Greater than 5")
+
+# Correct
+if x > 5:
+    print("Greater than 5")</code>
+    </div>
+
+    <p>
+        Make sure that the code inside a conditional block
+        is indented consistently.
+    </p>
+
+    <p><strong>Mistake 4: Using separate if statements unnecessarily</strong></p>
+
+    <div class="code-container">
+        <code># These are two independent conditions
+x = 10
+
+if x > 5:
+    print("Greater than 5")
+
+if x > 8:
+    print("Greater than 8")</code>
+    </div>
+
+    <p>
+        Both messages will print because both conditions are true.
+        This is different from using <code>if</code> and
+        <code>elif</code>, where only the first matching block
+        runs.
+    </p>
+
+
+    <p>
+        13. <strong>Practice exercises</strong>
+    </p>
+
+    <p>
+        Try solving these exercises yourself before looking
+        at the solutions.
+    </p>
+
+    <p><strong>Exercise 1: Positive or negative</strong></p>
+
+    <p>
+        Create a variable called <code>number</code>.
+        Write a conditional statement that prints whether
+        the number is positive, negative, or zero.
+    </p>
+
+    <p><strong>Exercise 2: Age check</strong></p>
+
+    <p>
+        Create a variable called <code>age</code>.
+        Print <code>"Adult"</code> if the age is at least 18.
+        Otherwise, print <code>"Minor"</code>.
+    </p>
+
+    <p><strong>Exercise 3: Grade calculator</strong></p>
+
+    <p>
+        Create a variable called <code>score</code>.
+        Print a grade based on the following ranges:
+    </p>
+
+    <ul>
+        <li>90 or above: A</li>
+        <li>80 to 89: B</li>
+        <li>70 to 79: C</li>
+        <li>60 to 69: D</li>
+        <li>Below 60: F</li>
+    </ul>
+
+    <p><strong>Exercise 4: Even or odd</strong></p>
+
+    <p>
+        Ask the user to enter a whole number using
+        <code>input()</code>. Convert it to an integer and
+        print whether it is even or odd.
+    </p>
+
+    <p><strong>Exercise 5: Weekend checker</strong></p>
+
+    <p>
+        Create a variable called <code>day</code>.
+        Use <code>if</code>, <code>elif</code>, and
+        <code>else</code> to print whether the day is
+        a weekday or a weekend.
+    </p>
+
+
+    <p>
+        14. <strong>Practice exercise solutions</strong>
+    </p>
+
+    <p>
+        Check your answers below. You can also use these
+        examples to understand how to structure your own
+        conditional statements.
+    </p>
+
+    <p><strong>Solution 1: Positive or negative</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>number = -3
+
+if number > 0:
+    print("Positive")
+elif number < 0:
+    print("Negative")
+else:
+    print("Zero")</code>
+    </div>
+
+    <p><strong>Solution 2: Age check</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")</code>
+    </div>
+
+    <p><strong>Solution 3: Grade calculator</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>score = 85
+
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")
+elif score >= 60:
+    print("D")
+else:
+    print("F")</code>
+    </div>
+
+    <p>
+        Notice that the conditions are checked from highest
+        to lowest. Once a condition is true, Python skips
+        the remaining branches.
+    </p>
+
+    <p><strong>Solution 4: Even or odd</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>number = int(input("Enter a whole number: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")</code>
+    </div>
+
+    <p>
+        The <code>input()</code> function returns text.
+        Using <code>int()</code> converts that text into
+        an integer so that mathematical operations can
+        be performed on it.
+    </p>
+
+    <p><strong>Solution 5: Weekend checker</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>day = "Saturday"
+
+if day == "Saturday":
+    print("Weekend")
+elif day == "Sunday":
+    print("Weekend")
+else:
+    print("Weekday")</code>
+    </div>
+
+
+    <p>
+        15. <strong>Summary</strong>
+    </p>
+
+    <p>
+        Conditional statements are one of the most important
+        concepts in Python. They allow your programs to make
+        decisions and respond differently depending on the
+        values of variables.
+    </p>
+
+    <ul>
+        <li><code>if</code> checks whether a condition is true.</li>
+        <li><code>elif</code> checks another condition if earlier ones were false.</li>
+        <li><code>else</code> runs when none of the earlier conditions were true.</li>
+        <li>Comparison operators compare values.</li>
+        <li>Logical operators combine or reverse conditions.</li>
+        <li>Nested conditionals allow decisions inside other decisions.</li>
+        <li>Indentation determines which statements belong to a block.</li>
+    </ul>
+
+    <p>
+        Remember: Python executes the code inside a conditional
+        block only when its condition is satisfied.
+        Practice changing variable values and predicting the
+        output to become more comfortable with conditional logic!
+    </p>
+
+</div>
 
     <h2 class="subheader">Tutorial: Loops</h2>
 
