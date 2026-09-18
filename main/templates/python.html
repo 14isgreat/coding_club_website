@@ -73,6 +73,199 @@ z = 3.14</code>
         <p>It should display <code>8.14</code>. Why? Because if <code>x = 5</code> and <code>z = 3.14</code> , <code>x + y = 5 + 3.14 = 8.14</code>!</p>
     </div>
 
+<h2 class="subheader">Tutorial: Printing and F-Strings</h2>
+
+<div class="explainer">
+    <p>1. You already saw <code>print()</code> when you printed "Hello, World!". The <code>print()</code> function is used to display something in the terminal.</p>
+
+    <p>Here is a simple example. Copy it into your code:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>print("Hello, Python!")</code>
+    </div>
+
+    <p>You can also print numbers. Numbers do not need quotation marks:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>print(5)
+print(3.14)</code>
+    </div>
+
+    <p>2. You can also print several things at once by separating them with commas.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = "Alex"
+age = 15
+
+print(name, age)</code>
+    </div>
+
+    <p>This will display:</p>
+    <div class="code-container">
+        <code>Alex 15</code>
+    </div>
+
+    <p>Python automatically puts a space between the different things you give to <code>print()</code>.</p>
+
+    <p>3. You can also combine text and variables using an <strong>f-string</strong>. The <code>f</code> before the quotation marks tells Python that you want to put variables inside the string.</p>
+
+    <p>Here is an example:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = "Alex"
+age = 15
+
+print(f"My name is {name} and I am {age} years old.")</code>
+    </div>
+
+    <p>The parts inside <code>{ }</code> are replaced with the values of the variables.</p>
+
+    <p>So the terminal will display:</p>
+    <div class="code-container">
+        <code>My name is Alex and I am 15 years old.</code>
+    </div>
+
+    <p>F-strings are especially useful when you want to create sentences using variables.</p>
+
+    <p>4. You don't have to use f-strings. Another way to combine text and variables is to use commas:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = "Alex"
+age = 15
+
+print("My name is", name, "and I am", age, "years old.")</code>
+    </div>
+
+    <p>This produces the same sentence, but f-strings often make longer sentences easier to read.</p>
+
+    <p>5. You can also join strings together using <code>+</code>. This is called <strong>concatenation</strong>.</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = "Alex"
+
+print("Hello, " + name + "!")</code>
+    </div>
+
+    <p>Notice that this only works directly when you are combining strings. If you want to combine a number with text, f-strings or commas are usually easier.</p>
+
+    <p>For example:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = 15
+
+print(f"I am {age} years old.")</code>
+    </div>
+
+    <p>6. There are a few other useful things you can do with <code>print()</code>. For example, you can control what separates multiple values using <code>sep</code>:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>print("Python", "is", "fun", sep="-")</code>
+    </div>
+
+    <p>This will display:</p>
+    <div class="code-container">
+        <code>Python-is-fun</code>
+    </div>
+
+    <p>You can also use <code>end</code> to control what happens at the end of a print statement. Normally, <code>print()</code> moves to a new line.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>print("Hello", end=" ")
+print("there!")</code>
+    </div>
+
+    <p>This will display <code>Hello there!</code> on one line.</p>
+
+    <p>For now, the most important things to remember are <code>print()</code> for displaying information and <code>f"..."</code> for easily putting variables inside text.</p>
+</div>
+
+
+<h2 class="subheader">Tutorial: Input Statements</h2>
+
+<div class="explainer">
+    <p>1. So far, your programs have only used information that you wrote yourself. With <code>input()</code>, you can let the person running your program type something into the terminal.</p>
+
+    <p>Here is a simple example. Copy it into your code:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = input("What is your name? ")
+
+print(f"Hello, {name}!")</code>
+    </div>
+
+    <p>When the program reaches <code>input()</code>, it waits for the user to type something. Whatever they type is then saved in the <code>name</code> variable.</p>
+
+    <p>2. You can think of <code>input()</code> like this:</p>
+    <div class="code-container">
+        <code>input() → user types something → value is saved in a variable</code>
+    </div>
+
+    <p>For example, if the user types <code>Sam</code>, then <code>name</code> will contain the string <code>"Sam"</code>.</p>
+
+    <p>3. An important thing to remember is that <code>input()</code> gives you a <strong>string</strong>, even if the user types a number.</p>
+
+    <p>For example:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = input("How old are you? ")
+
+print(age)</code>
+    </div>
+
+    <p>If the user types <code>15</code>, Python treats <code>age</code> as the string <code>"15"</code>, not the integer <code>15</code>.</p>
+
+    <p>4. This becomes important when you want to do calculations. To turn the input into an integer, use <code>int()</code>:</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>age = int(input("How old are you? "))
+
+print(age + 1)</code>
+    </div>
+
+    <p>If the user enters <code>15</code>, Python turns it into the integer <code>15</code>. The program will therefore display <code>16</code>.</p>
+
+    <p>5. You can use <code>float()</code> when you want to allow decimal numbers.</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>price = float(input("How much does it cost? "))
+
+print(price)</code>
+    </div>
+
+    <p>If the user enters <code>4.99</code>, the value is stored as the float <code>4.99</code>.</p>
+
+    <p>6. You can combine input, variables, and f-strings to make interactive programs.</p>
+
+    <p>Try this example:</p>
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = input("What is your name? ")
+age = int(input("How old are you? "))
+
+print(f"Hello, {name}!")
+print(f"You are {age} years old.")</code>
+    </div>
+
+    <p>The program asks two questions, saves the answers in variables, and then uses those variables when printing the result.</p>
+
+    <p>7. You can also ask for multiple pieces of information and use them together:</p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>name = input("What is your name? ")
+favorite_color = input("What is your favorite color? ")
+
+print(f"{name}'s favorite color is {favorite_color}.")</code>
+    </div>
+
+    <p>Now your programs can receive information from the person running them instead of only using values that you wrote beforehand.</p>
+
+    <p>The most important things to remember are: <code>input()</code> gives you a string, <code>int(input())</code> gives you an integer, and <code>float(input())</code> gives you a decimal number.</p>
+</div>
 
 <h2 class="subheader">Tutorial: Conditional Statements</h2>
 
