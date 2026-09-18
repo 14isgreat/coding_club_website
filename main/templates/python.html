@@ -881,40 +881,1047 @@ else:
 
 </div>
 
-    <h2 class="subheader">Tutorial: Loops</h2>
 
-    <div class="explainer">
-        <p>With loops you can get something to repeat a certain amount of times. There are different types of loops.</p>
-        <p>1. For loop:</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>for i in range(5):
+<h2 class="subheader">Tutorial: Loops</h2>
+
+<div class="explainer">
+
+    <p>
+        1. <strong>What are loops?</strong>
+    </p>
+
+    <p>
+        Loops allow you to repeat a block of code multiple times
+        without having to write the same code over and over again.
+        They are useful when you want to perform the same action
+        repeatedly or work with a collection of values.
+    </p>
+
+    <p>
+        For example, instead of writing five separate
+        <code>print()</code> statements, you can use a loop
+        to print something five times.
+    </p>
+
+    <p>
+        Python has two main types of loops:
+    </p>
+
+    <ul>
+        <li>
+            <code>for</code> loops — repeat over a sequence
+            or a specified range of values.
+        </li>
+        <li>
+            <code>while</code> loops — repeat as long as
+            a condition is true.
+        </li>
+    </ul>
+
+
+    <p>
+        2. <strong>For loops</strong>
+    </p>
+
+    <p>
+        A <code>for</code> loop repeats a block of code
+        for each value in a sequence.
+        One common use is the <code>range()</code> function,
+        which generates a sequence of numbers.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(5):
     print(i)</code>
-        </div>
-        <p>This loop prints the variable <code>i</code> 5 times. </p>
-        <p>In For loops, you must type "for", then create a variable, in this case "i" (short for iteration) and then "in range():". </p>
-        <p>In between the brackets () you must put the amount of times you want it to repeat.</p>
-        <p>2. While loop:</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>x = 0
-while x < 5:
-    print(x)
-    x = x + 1 # because of this line, 1 is added to x each time it repeats</code>
-        </div>
-        <p>With While loops you must type "while" and afterwards there must be a condition. In this case: x < 5</p>
-        <p>While loops repeat forever, until the condition is no longer met.</p>
-        <p>Be careful, if your condition is never met your program will run forever!</p>
-        <p>If you <i>really</i> want something to run forever:</p>
-        <div class="code-container">
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <code>while True: # True will always be True, so this runs forever 
-    print("hello")
-            </code>
-        </div>
     </div>
 
-    <h2 class="subheader">Tutorial: Lists and Dictionaries</h2>
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+2
+3
+4</code>
+    </div>
+
+    <p>
+        In this example, the loop runs five times.
+        Each time it runs, the variable <code>i</code>
+        takes the next value from <code>range(5)</code>.
+    </p>
+
+    <p>
+        Notice that the numbers start at <code>0</code>,
+        not <code>1</code>. The values are
+        <code>0, 1, 2, 3, 4</code>.
+    </p>
+
+    <p>
+        The number 5 is not included.
+        This is because <code>range(5)</code> generates
+        numbers starting at 0 and stopping just before 5.
+    </p>
+
+    <p>
+        The variable <code>i</code> is often used as a
+        loop variable. It is not short for "iteration";
+        it is simply a common variable name.
+        You can choose a different name if you prefer.
+    </p>
+
+
+    <p>
+        3. <strong>Understanding range()</strong>
+    </p>
+
+    <p>
+        The <code>range()</code> function can be used in
+        three different ways.
+    </p>
+
+    <p><strong>Using range(stop)</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(3):
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+2</code>
+    </div>
+
+    <p>
+        <code>range(3)</code> starts at 0 and stops
+        before 3.
+    </p>
+
+    <p><strong>Using range(start, stop)</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(2, 6):
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>2
+3
+4
+5</code>
+    </div>
+
+    <p>
+        Here, the loop starts at 2 and stops before 6.
+        This means it prints four numbers.
+    </p>
+
+    <p><strong>Using range(start, stop, step)</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(0, 10, 2):
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+2
+4
+6
+8</code>
+    </div>
+
+    <p>
+        The third value, called the <strong>step</strong>,
+        determines how much the number changes each time.
+        In this example, it increases by 2.
+    </p>
+
+    <p>
+        You can also use a negative step to count backwards.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(5, 0, -1):
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>5
+4
+3
+2
+1</code>
+    </div>
+
+    <p>
+        The loop counts down from 5 to 1.
+        The value 0 is not included.
+    </p>
+
+
+    <p>
+        4. <strong>Repeating an action</strong>
+    </p>
+
+    <p>
+        You can use a <code>for</code> loop to repeat
+        an action a specific number of times.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(4):
+    print("Hello!")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>Hello!
+Hello!
+Hello!
+Hello!</code>
+    </div>
+
+    <p>
+        The loop runs four times, so the message is printed
+        four times.
+    </p>
+
+    <p>
+        Even though <code>i</code> changes each time,
+        we do not need to use it inside the
+        <code>print()</code> statement.
+    </p>
+
+
+    <p>
+        5. <strong>Using the loop variable in calculations</strong>
+    </p>
+
+    <p>
+        The loop variable can be used to perform calculations
+        or create different output each time.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(1, 6):
+    print(i * 2)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>2
+4
+6
+8
+10</code>
+    </div>
+
+    <p>
+        The loop goes through the numbers 1 to 5.
+        Each number is multiplied by 2 before it is printed.
+    </p>
+
+    <p>
+        You can also use a loop to calculate a total.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>total = 0
+
+for i in range(1, 6):
+    total = total + i
+
+print(total)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>15</code>
+    </div>
+
+    <p>
+        The variable <code>total</code> starts at 0.
+        Each time the loop runs, the current value of
+        <code>i</code> is added to it.
+    </p>
+
+    <p>
+        At the end, the total is:
+        <code>1 + 2 + 3 + 4 + 5 = 15</code>.
+    </p>
+
+
+    <p>
+        6. <strong>While loops</strong>
+    </p>
+
+    <p>
+        A <code>while</code> loop repeats a block of code
+        as long as its condition is true.
+    </p>
+
+    <p>
+        Unlike a <code>for</code> loop using
+        <code>range()</code>, a <code>while</code> loop
+        does not automatically stop after a set number
+        of repetitions. You must make sure that its
+        condition eventually becomes false, unless
+        you intentionally want a loop that continues
+        until interrupted.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 0
+
+while x < 5:
+    print(x)
+    x = x + 1</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+2
+3
+4</code>
+    </div>
+
+    <p>
+        In this example, Python checks whether
+        <code>x < 5</code> before each repetition.
+    </p>
+
+    <p>
+        Initially, <code>x</code> is 0, so the condition
+        is true. Python prints <code>x</code> and then
+        increases it by 1.
+    </p>
+
+    <p>
+        This continues until <code>x</code> becomes 5.
+        At that point, <code>x < 5</code> is false,
+        so the loop stops.
+    </p>
+
+    <p>
+        The line <code>x = x + 1</code> is important.
+        Without it, <code>x</code> would remain 0 and
+        the condition would never become false.
+    </p>
+
+
+    <p>
+        7. <strong>Updating variables in a while loop</strong>
+    </p>
+
+    <p>
+        A common use of a <code>while</code> loop is
+        repeatedly updating a variable.
+    </p>
+
+    <p>
+        Python also has a shorter way to increase a
+        variable by a certain amount:
+        <code>x += 1</code>.
+    </p>
+
+    <p>
+        This is equivalent to writing
+        <code>x = x + 1</code>.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 1
+
+while x <= 5:
+    print(x)
+    x += 1</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>1
+2
+3
+4
+5</code>
+    </div>
+
+    <p>
+        The loop begins at 1 and continues while
+        <code>x</code> is less than or equal to 5.
+        Each time it runs, <code>x</code> increases by 1.
+    </p>
+
+    <p>
+        Other useful assignment operators include:
+    </p>
+
+    <ul>
+        <li><code>x += 2</code> — add 2 to x.</li>
+        <li><code>x -= 1</code> — subtract 1 from x.</li>
+        <li><code>x *= 2</code> — multiply x by 2.</li>
+    </ul>
+
+
+    <p>
+        8. <strong>Infinite loops</strong>
+    </p>
+
+    <p>
+        An infinite loop is a loop that does not stop
+        on its own.
+    </p>
+
+    <p>
+        For example, the following loop continues
+        printing because its condition is always true:
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>while True:
+    print("Hello")</code>
+    </div>
+
+    <p>
+        Since <code>True</code> is always true,
+        the loop does not naturally terminate.
+        It will continue until the program is interrupted
+        or the loop exits through another mechanism.
+    </p>
+
+    <p>
+        Infinite loops can be useful for programs that
+        need to keep running, such as simple menu systems.
+        However, be careful when using them.
+    </p>
+
+    <p>
+        If a loop runs endlessly by accident, it may
+        consume computer resources or prevent the rest
+        of your program from progressing.
+    </p>
+
+
+    <p>
+        9. <strong>Using break</strong>
+    </p>
+
+    <p>
+        The <code>break</code> statement immediately
+        exits the innermost loop.
+        It is useful when you want to stop looping
+        before the loop would normally finish.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(10):
+    if i == 5:
+        break
+
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+2
+3
+4</code>
+    </div>
+
+    <p>
+        When <code>i</code> becomes 5, the condition
+        <code>i == 5</code> is true.
+        Python executes <code>break</code> and exits
+        the loop immediately.
+    </p>
+
+    <p>
+        The number 5 is not printed because the
+        <code>break</code> statement runs before
+        the <code>print()</code> statement.
+    </p>
+
+
+    <p>
+        10. <strong>Using continue</strong>
+    </p>
+
+    <p>
+        The <code>continue</code> statement skips
+        the rest of the current loop iteration
+        and moves on to the next one.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(5):
+    if i == 2:
+        continue
+
+    print(i)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+3
+4</code>
+    </div>
+
+    <p>
+        When <code>i</code> is 2, Python skips
+        the <code>print()</code> statement and
+        continues with the next value.
+    </p>
+
+    <p>
+        Unlike <code>break</code>, <code>continue</code>
+        does not stop the entire loop.
+    </p>
+
+
+    <p>
+        11. <strong>Looping through a list</strong>
+    </p>
+
+    <p>
+        A <code>for</code> loop can also go through
+        the items in a list.
+        This is often more convenient than using
+        <code>range()</code>.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "orange"]
+
+for fruit in fruits:
+    print(fruit)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>apple
+banana
+orange</code>
+    </div>
+
+    <p>
+        The loop goes through the list one item
+        at a time.
+        The variable <code>fruit</code> holds the
+        current item during each iteration.
+    </p>
+
+    <p>
+        You can choose any valid variable name,
+        such as <code>item</code> or
+        <code>name</code>.
+    </p>
+
+
+    <p>
+        12. <strong>Using range() to access list positions</strong>
+    </p>
+
+    <p>
+        Sometimes you need the position of each
+        item in a list.
+        You can use <code>range()</code> together
+        with <code>len()</code>.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>fruits = ["apple", "banana", "orange"]
+
+for i in range(len(fruits)):
+    print(i, fruits[i])</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0 apple
+1 banana
+2 orange</code>
+    </div>
+
+    <p>
+        The <code>len()</code> function returns
+        the number of items in the list.
+        Here, there are three items, so
+        <code>range(len(fruits))</code> produces
+        the positions 0, 1, and 2.
+    </p>
+
+    <p>
+        The expression <code>fruits[i]</code>
+        accesses the item at position <code>i</code>.
+    </p>
+
+
+    <p>
+        13. <strong>Nested loops</strong>
+    </p>
+
+    <p>
+        A nested loop is a loop inside another loop.
+        The inner loop runs completely for each
+        iteration of the outer loop.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(3):
+    for j in range(2):
+        print(i, j)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0 0
+0 1
+1 0
+1 1
+2 0
+2 1</code>
+    </div>
+
+    <p>
+        The outer loop runs three times.
+        Each time it runs, the inner loop runs twice.
+        This results in six total executions of
+        the inner <code>print()</code> statement.
+    </p>
+
+    <p>
+        Nested loops are useful for working with
+        grids, tables, and combinations of values.
+    </p>
+
+
+    <p>
+        14. <strong>Using else with loops</strong>
+    </p>
+
+    <p>
+        Python allows you to use an <code>else</code>
+        block with a <code>for</code> or
+        <code>while</code> loop.
+    </p>
+
+    <p>
+        The <code>else</code> block runs when the
+        loop finishes normally, rather than being
+        stopped by a <code>break</code> statement.
+    </p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(3):
+    print(i)
+else:
+    print("Loop finished")</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>0
+1
+2
+Loop finished</code>
+    </div>
+
+    <p>
+        Since the loop completes without encountering
+        <code>break</code>, the <code>else</code>
+        block runs.
+    </p>
+
+    <p>
+        If the loop had been stopped by
+        <code>break</code>, the <code>else</code>
+        block would be skipped.
+    </p>
+
+
+    <p>
+        15. <strong>Common mistakes</strong>
+    </p>
+
+    <p><strong>Mistake 1: Forgetting to update a while loop</strong></p>
+
+    <div class="code-container">
+        <code># Incorrect
+x = 0
+
+while x < 5:
+    print(x)</code>
+    </div>
+
+    <p>
+        This loop never changes <code>x</code>,
+        so the condition remains true.
+        The loop will continue indefinitely unless
+        it is interrupted.
+    </p>
+
+    <p><strong>Correct version:</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 0
+
+while x < 5:
+    print(x)
+    x += 1</code>
+    </div>
+
+    <p>
+        Increasing <code>x</code> allows the condition
+        to eventually become false.
+    </p>
+
+
+    <p><strong>Mistake 2: Forgetting that range() stops before its end value</strong></p>
+
+    <div class="code-container">
+        <code>for i in range(5):
+    print(i)</code>
+    </div>
+
+    <p>
+        This prints 0 through 4, not 1 through 5.
+        To print 1 through 5, use:
+    </p>
+
+    <div class="code-container">
+        <code>for i in range(1, 6):
+    print(i)</code>
+    </div>
+
+
+    <p><strong>Mistake 3: Incorrect indentation</strong></p>
+
+    <div class="code-container">
+        <code># Incorrect
+for i in range(3):
+print(i)
+
+# Correct
+for i in range(3):
+    print(i)</code>
+    </div>
+
+    <p>
+        Python uses indentation to determine which
+        statements belong to the loop.
+        The code inside the loop must be indented.
+    </p>
+
+
+    <p><strong>Mistake 4: Using the wrong condition</strong></p>
+
+    <div class="code-container">
+        <code># This loop never starts
+x = 0
+
+while x > 5:
+    print(x)
+    x += 1</code>
+    </div>
+
+    <p>
+        The condition is false from the beginning
+        because 0 is not greater than 5.
+        Therefore, the loop body never runs.
+    </p>
+
+    <p>
+        If you want to count upwards from 0 to 5,
+        use <code>while x < 5</code> instead.
+    </p>
+
+
+    <p>
+        16. <strong>Practice exercises</strong>
+    </p>
+
+    <p>
+        Try solving these exercises yourself before
+        looking at the solutions.
+    </p>
+
+    <p><strong>Exercise 1: Count to ten</strong></p>
+
+    <p>
+        Write a <code>for</code> loop that prints
+        the numbers from 1 to 10.
+    </p>
+
+    <p><strong>Exercise 2: Multiplication table</strong></p>
+
+    <p>
+        Create a variable called <code>number</code>.
+        Use a loop to print its multiples from
+        1 times the number to 10 times the number.
+    </p>
+
+    <p><strong>Exercise 3: Countdown</strong></p>
+
+    <p>
+        Use a <code>while</code> loop to print
+        the numbers from 5 down to 1.
+        Then print <code>"Go!"</code>.
+    </p>
+
+    <p><strong>Exercise 4: Sum of numbers</strong></p>
+
+    <p>
+        Use a loop to calculate the sum of all
+        numbers from 1 to 100.
+    </p>
+
+    <p><strong>Exercise 5: Print even numbers</strong></p>
+
+    <p>
+        Use a <code>for</code> loop and
+        <code>range()</code> to print all even
+        numbers from 2 to 20.
+    </p>
+
+    <p><strong>Exercise 6: Loop through a list</strong></p>
+
+    <p>
+        Create a list containing three of your
+        favorite foods.
+        Use a loop to print each food.
+    </p>
+
+    <p><strong>Exercise 7: Stop at a number</strong></p>
+
+    <p>
+        Use a <code>for</code> loop with
+        <code>break</code> to print numbers
+        from 0 upwards, stopping when the
+        number reaches 7.
+    </p>
+
+
+    <p>
+        17. <strong>Practice exercise solutions</strong>
+    </p>
+
+    <p>
+        Check your answers below.
+    </p>
+
+    <p><strong>Solution 1: Count to ten</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(1, 11):
+    print(i)</code>
+    </div>
+
+    <p>
+        The loop starts at 1 and stops before 11,
+        so it prints all numbers from 1 to 10.
+    </p>
+
+
+    <p><strong>Solution 2: Multiplication table</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>number = 5
+
+for i in range(1, 11):
+    print(number * i)</code>
+    </div>
+
+    <p>
+        This prints the first ten multiples of 5.
+        Change the value of <code>number</code>
+        to generate a different multiplication table.
+    </p>
+
+
+    <p><strong>Solution 3: Countdown</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>x = 5
+
+while x > 0:
+    print(x)
+    x -= 1
+
+print("Go!")</code>
+    </div>
+
+    <p>
+        The loop decreases <code>x</code> by 1
+        each time until it reaches 0.
+    </p>
+
+
+    <p><strong>Solution 4: Sum of numbers</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>total = 0
+
+for i in range(1, 101):
+    total += i
+
+print(total)</code>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="code-container">
+        <code>5050</code>
+    </div>
+
+    <p>
+        The loop adds every number from 1 to 100
+        to the variable <code>total</code>.
+    </p>
+
+
+    <p><strong>Solution 5: Print even numbers</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(2, 21, 2):
+    print(i)</code>
+    </div>
+
+    <p>
+        The loop starts at 2 and increases by 2
+        each time, stopping before 21.
+    </p>
+
+
+    <p><strong>Solution 6: Loop through a list</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>foods = ["pizza", "pasta", "sushi"]
+
+for food in foods:
+    print(food)</code>
+    </div>
+
+
+    <p><strong>Solution 7: Stop at a number</strong></p>
+
+    <div class="code-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>for i in range(10):
+    if i == 7:
+        break
+
+    print(i)</code>
+    </div>
+
+    <p>
+        The loop prints numbers from 0 to 6.
+        When <code>i</code> becomes 7,
+        <code>break</code> stops the loop before
+        7 is printed.
+    </p>
+
+
+    <p>
+        18. <strong>Summary</strong>
+    </p>
+
+    <p>
+        Loops are an important part of Python.
+        They allow you to repeat actions efficiently
+        and work with collections of data.
+    </p>
+
+    <ul>
+        <li>
+            <code>for</code> loops repeat over a sequence
+            or range of values.
+        </li>
+        <li>
+            <code>range()</code> generates a sequence
+            of numbers.
+        </li>
+        <li>
+            <code>while</code> loops continue while
+            a condition is true.
+        </li>
+        <li>
+            <code>break</code> exits a loop immediately.
+        </li>
+        <li>
+            <code>continue</code> skips to the next
+            iteration.
+        </li>
+        <li>
+            Nested loops place one loop inside another.
+        </li>
+        <li>
+            Loops can be used to process lists and
+            perform calculations.
+        </li>
+    </ul>
+
+    <p>
+        Remember to check your loop conditions and
+        indentation carefully.
+        When learning loops, try changing the values
+        and predicting the output before running
+        the program.
+    </p>
+
+</div>
+
+    <h2 class="subheader">Tutorial: Lists</h2>
 
     <div class="explainer">
 
@@ -1370,12 +2377,15 @@ second.append(4)
 print(first)
 print(second)</code>
     </div>
+        
+    <h2 class="subheader">Tutorial: Dictionaries</h2>
 
-
-    <p><strong>2. Dictionaries:</strong></p>
+    <div class="explainer">
 
     <p>A dictionary stores information as <strong>key-value pairs</strong>. Dictionaries are created using curly brackets <code>{}</code>.</p>
 
+    </div>
+        
     <div class="code-container">
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         <code>person = {
